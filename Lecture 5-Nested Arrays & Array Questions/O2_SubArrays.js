@@ -1,4 +1,4 @@
-let arr=[1,2,3,4,5];
+// let arr=[1,2,3,4,5];
 
 // arr.pop(); // remove last elment of array 1,2,3 ..
 // arr.shift();  // remove the first of array // 2,3,4...
@@ -12,4 +12,55 @@ let arr=[1,2,3,4,5];
 // arr.length=arr.length-1;
 // console.log(arr);
 
+// let arr=[-1,5,-3,2,-1,3];  //6 [-1,5,-3,2,-1,3]
+// maxsum(arr);
+ 
 
+function maxsum(arr1){
+    let maxSum=arr1[0];
+    for(let i=0;i<arr1.length;i++){
+        let subArrays="";
+        let sumSubArrays=0;
+        for(let j=i;j<arr1.length;j++){
+            subArrays+=arr1[j]+" ";
+            sumSubArrays+=arr1[j];
+            console.log(subArrays);
+            console.log({sumSubArrays});
+            if(maxSum < sumSubArrays){
+                maxSum=sumSubArrays;
+            }
+        }
+        console.log("--------");
+    }
+    console.log(maxSum);
+   
+}
+
+
+let tyuii=[1,2,-3,0,1,-1,1];
+
+
+function countSumK(arr1 , k){     // o(n*n) , o(1)
+    let count=0 ;
+    console.log(arr1, k);
+    for(let i=0;i<arr1.length;i++){
+        let subArrays=[];
+        let sumSubArrays=0;
+        for(let j=i;j<arr1.length;j++){
+
+            subArrays+=arr1[j]+" ";
+            sumSubArrays+=arr1[j];
+
+            if(sumSubArrays === k){
+                console.log({subArrays});
+                count++;
+            }
+        }
+        console.log("--------");
+    }
+    console.log(count);
+   
+}
+
+
+countSumK(tyuii , 0);
