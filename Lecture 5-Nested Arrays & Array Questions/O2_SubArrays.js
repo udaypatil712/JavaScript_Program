@@ -37,8 +37,8 @@ function maxsum(arr1){
 }
 
 
-let tyuii=[1,2,-3,0,1,-1,1];
-
+// let tyuii=[1,2,-3,0,1,-1,1];
+// countSumK(tyuii , 0);
 
 function countSumK(arr1 , k){     // o(n*n) , o(1)
     let count=0 ;
@@ -63,4 +63,70 @@ function countSumK(arr1 , k){     // o(n*n) , o(1)
 }
 
 
-countSumK(tyuii , 0);
+// let arr=[1,2,-3,0,1,-1,1];
+// printKOfSubArrays(arr,2);
+
+function printKOfSubArrays(arr1 , k){ 
+    let n=arr.length;                              // o(n*n) , o(1)
+    let countSubArrays=0;
+    for(let i=0;i<arr1.length;i++){
+        let subArrays=[];
+        for(let j=i;j<arr1.length;j++){
+            subArrays[j-i]=arr[j];
+            // console.log({subArrays});
+            // console.log(subArrays.length);
+            if(subArrays.length === k){
+                console.log({subArrays});
+                countSubArrays++;
+            }
+        }
+        console.log("---------------------------")
+    }
+   console.log(countSubArrays);
+}
+
+
+
+// let arr=[1,2,-3,0,1,-1,1];
+// maxLengthOfSubArrays(arr);
+
+function maxLengthOfSubArrays(arr){
+    let maxLength=-Infinity;
+    for(let i=0;i<arr.length;i++){
+        let subArrays=[];
+        for(let j=i;j<arr.length;j++){
+            subArrays[j-i]=arr[j];
+            // console.log(subArrays);
+            if(subArrays.length > maxLength){
+                maxLength=subArrays.length; 
+            }
+        }
+        console.log(subArrays);
+        break;
+        // console.log("----------------------------------")
+    }
+    console.log(maxLength)
+}
+
+
+
+let arr=[1, 2, 3, 4, 5];
+findSubArrays(arr,3);
+
+function findSubArrays(arr,k){
+    
+    for(let i=0;i<arr.length;i++){
+        let sumSubArrays=0;
+        let subArrays=[];
+        for(let j=i;j<arr.length;j++){
+            subArrays[j-i]=arr[j];
+            // console.log(subArrays);
+            sumSubArrays+=arr[j];
+            if(sumSubArrays === k){
+                console.log(subArrays);
+            }
+            // break;
+        }
+        // console.log("_____________")
+    }
+}
