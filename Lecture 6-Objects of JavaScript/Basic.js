@@ -55,45 +55,67 @@
 // console.log(studentArr[0].name);
 
 
-let classroomArr=[
-    {
-        name : "uday",
-        age : 123,
-        gender : "male",
-        address : {
-            addressLine1 : "vhbhvh",
-             addressLine1 : "pvhv",
-             city : "pune"
+// let classroomArr=[
+//     {
+//         name : "uday",
+//         age : 123,
+//         gender : "male",
+//         address : {
+//             addressLine1 : "vhbhvh",
+//              addressLine1 : "pvhv",
+//              city : "pune"
+//         }
+//     },
+
+//     {
+//         name : "vivek",
+//         age : 23,
+//         gender : "male",
+//         address : {
+//             addressLine1 : "vhbhvh",
+//              addressLine1 : "pvhv",
+//              city : "pachora"
+//         }
+//     },
+
+//     {
+//         name : "rupesh",
+//         age : 12,
+//         gender : "male",
+//         address : {
+//             addressLine1 : "vhbhvh",
+//              addressLine1 : "pvhv",
+//              city : "pune"
+//         }
+//     }
+
+// ];
+
+ 
+// for(let i=0;i<classroomArr.length;i++){
+//     if(classroomArr[i].address.city === "pune"){
+//         console.log(classroomArr[i].name ," ",classroomArr[i].age," ",classroomArr[i].address.addressLine1);
+//     }
+// }
+
+
+
+
+let portfolio ={
+    name : "uday",
+    skills : ["java","javaScript","mern"],
+    showSkills: function showSkills(){
+        for(let i=0;i<this.skills.length;i++){
+            console.log(this.skills[i]);
         }
     },
-
-    {
-        name : "vivek",
-        age : 23,
-        gender : "male",
-        address : {
-            addressLine1 : "vhbhvh",
-             addressLine1 : "pvhv",
-             city : "pachora"
-        }
-    },
-
-    {
-        name : "rupesh",
-        age : 12,
-        gender : "male",
-        address : {
-            addressLine1 : "vhbhvh",
-             addressLine1 : "pvhv",
-             city : "pune"
-        }
-    }
-
-];
-
-
-for(let i=0;i<classroomArr.length;i++){
-    if(classroomArr[i].address.city === "pune"){
-        console.log(classroomArr[i].name ," ",classroomArr[i].age," ",classroomArr[i].address.addressLine1);
+    addNewSkills: function addNewSkills(){
+        this.skills[this.skills.length]="html";
+        this.skills.length++;
+        
     }
 }
+portfolio.addNewSkills();
+portfolio.showSkills();
+ 
+ 
