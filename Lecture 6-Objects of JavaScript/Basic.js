@@ -3,6 +3,7 @@
 //     age : 23,
 //     gender : "male"
 // };
+
 // // update the gender
 // StudentObj.gender="female";
 // console.log(StudentObj);
