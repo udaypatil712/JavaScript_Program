@@ -279,8 +279,8 @@ function reverseStringWord(str){
 // }
 
 
-let str="abccbc";
-plaindromeSubString(str);
+// let str="abccbc";
+// plaindromeSubString(str);
 function plaindromeSubString(str){
     for(let i=0;i<str.length;i++){
         let subString="";
@@ -300,3 +300,31 @@ function plaindromeSubString(str){
         }
     }
 }
+
+
+let str="abbbccd";
+compressedString(str);
+function compressedString(str){ // it's print all element in string 
+    let map = new Map();
+
+    for(let i=0;i<str.length;i++){
+         if(map.has(str[i])){
+            map.set(str[i] , map.get(str[i]) + 1)
+        }else{
+            map.set(str[i] , 1);
+        }
+       
+    }
+    let ans="";
+    for(let [key , value] of map.entries()){
+         if(value >= 2){
+            ans+=key+""+value;
+         }else{
+            ans+=key;
+         }
+    }
+    console.log(ans);
+     
+}
+
+    
