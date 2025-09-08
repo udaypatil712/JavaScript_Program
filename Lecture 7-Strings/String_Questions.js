@@ -247,8 +247,7 @@ function shuffleString(str,arr){
 // reverseStringWord(str);
 function reverseStringWord(str){
     let arr=str.trim().split(" ");
-    console.log(arr);
-
+   
     let s=0;
     let e=arr.length-1;
 
@@ -263,20 +262,41 @@ function reverseStringWord(str){
 }
  
 
-let arr=[6,-4,3,2,-3];
+// let arr=[6,-4,3,2,-3];
 
-for(let  i=0;i<arr.length;i++){
-    let subArray="";
-    let sumSub=0;
-    let temp=0;
-    for(let j=i;j<arr.length;j++){
-        subArray+=arr[j]+' ';
-        sumSub+=arr[j];
-        console.log(subArray);
-        console.log(sumSub);
-        temp=sumSub;
-    }
+// for(let  i=0;i<arr.length;i++){
+//     let subArray="";
+//     let sumSub=0;
+//     let temp=0;
+//     for(let j=i;j<arr.length;j++){
+//         subArray+=arr[j]+' ';
+//         sumSub+=arr[j];
+//         console.log(subArray);
+//         console.log(sumSub);
+//         temp=sumSub;
+//     }
         
+// }
+
+
+let str="abccbc";
+plaindromeSubString(str);
+function plaindromeSubString(str){
+    for(let i=0;i<str.length;i++){
+        let subString="";
+       
+        for(let j=i;j<str.length;j++){
+            subString+=str[j];
+             let revSub="";
+            for(let k=subString.length-1;k>=0;k--){
+                revSub+=subString[k];
+            }
+            if(revSub === subString){
+             
+                    console.log(revSub);
+            
+                 
+            }
+        }
+    }
 }
-
-
