@@ -140,6 +140,29 @@ function lowerBound(arr){
     return index;
 
 }
+
+// let arr=[1,2,6,6,11,11,11,15];
+// let target=7;
+// console.log(upperBound(arr ,target));
+
+function upperBound(arr){
+    let s=0;
+    let e=arr.length-1;
+    let index=arr.length;
+
+    while(s <= e){
+        let mid = Math.floor(s + (e-s)/2);
+        
+        if(arr[mid] <= target){
+
+            index=mid+1;
+            s = mid+1;
+        }else{
+            e=mid-1;
+        }
+    }
+    return index;
+}
  
 
 
