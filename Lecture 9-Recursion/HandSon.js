@@ -1,26 +1,3 @@
-// let n=5;
-// console.log(fact(n));
-
-function fact(n){
-    if(n === 0){
-        return 1;
-    }
-    return n * fact(n-1);
-}
-
-// let n=10;
-// print(n);
-
-function print(n){
-    if(n === 0){
-        return;
-    }
-    console.log(n); // 10 9 8.....1
-    print(n-1);
-    console.log(n); // 1 2 3.....nth
-}
-
-  
 // let n= 30201;
 // let c = 0;
 // let ans=countZeros(n,c);

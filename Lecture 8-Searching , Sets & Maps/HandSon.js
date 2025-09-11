@@ -89,8 +89,8 @@ function removeDuplicates(str) {
 
 //..frequency of an element..
 
-let str="aaabbcccddde";
-frequencyCount(str);
+// let str="aaabbcccddde";
+// frequencyCount(str);
 
 function frequencyCount(str) {
   let map = new Map();
