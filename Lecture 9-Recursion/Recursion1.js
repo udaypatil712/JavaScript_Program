@@ -100,9 +100,9 @@ function maxElement(arr , i,max){
     return maxElement(arr , i+1,max);
 }
 
-let arr = [1,2,3,2,3,4,5];
-let target = 2;
-firstAndLastOccurence(arr,target);
+// let arr = [1,2,3,2,3,4,5];
+// let target = 2;
+// firstAndLastOccurence(arr,target);
 
 function firstAndLastOccurence(arr,target){
     let first = -1;
@@ -124,3 +124,81 @@ function firstAndLastOccurence(arr,target){
     console.log(first , last);
 
 }
+
+
+// let n=5;
+// console.log(printSumNatural(n));
+
+function printSumNatural(n){
+    if(n <= 0){
+        return 0;
+    }
+    return n + printSumNatural(n-1);
+}
+
+
+// let a=15;
+// let b=25;
+// console.log(GCDOfNumber(a,b));
+
+function GCDOfNumber(a,b){
+    while( a != 0){
+        let temp = a;
+        a = b % a;
+        b = temp;
+    }
+    return Math.abs(b); // for negative number..
+}
+
+// let a=15;
+// let b=25;
+// console.log(GCDOfNumberRucursion(a,b));
+
+function GCDOfNumberRucursion(a,b){
+    if(a != 0){
+        return b;
+    }
+    return GCDOfNumberRucursion(b % a , a);
+}
+
+// let n=5;
+// console.log(n);
+// console.log(fibonaciNumber(n));
+
+function fibonaciNumber(n){
+    if (n < 2) {
+            return n;
+        }
+    return fibonaciNumber(n - 1) + fibonaciNumber(n - 2);
+}
+
+// console.log(calPower(2,10));
+
+function calPower(a,b){
+    let power=1;
+    for(let i =1;i<=b;i++){
+        power*=a;
+    }
+    return power;
+}
+
+
+// console.log(powerRecursion(2));
+
+// function powerRecursion(a){
+ 
+// }
+
+// let str="madam";
+// console.log(checkPalindrome(str,0, str.length-1));
+
+function checkPalindrome(str , s , e){ 
+    if(s >= e){
+        return "Yes";
+    }
+    if(str[s] !== str[e]){
+        return "NO";
+    }
+    return checkPalindrome(str,s+1,e-1);
+}
+

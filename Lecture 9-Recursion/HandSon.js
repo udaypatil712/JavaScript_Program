@@ -77,9 +77,9 @@ function maxElement(arr , i,max){
     return maxElement(arr , i+1,max);
 }
 
-let arr = [1,2,3,2,3,4,5];
-let target = 2;
-firstAndLastOccurence(arr,target);
+// let arr = [1,2,3,2,3,4,5];
+// let target = 2;
+// firstAndLastOccurence(arr,target);
 
 function firstAndLastOccurence(arr,target){
     let first = -1;
@@ -101,3 +101,7 @@ function firstAndLastOccurence(arr,target){
     console.log(first , last);
 
 }
+
+
+
+

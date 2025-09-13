@@ -302,8 +302,8 @@ function plaindromeSubString(str){
 }
 
 
-let str="abbbccd";
-compressedString(str);
+// let str="abbbccd";
+// compressedString(str);
 function compressedString(str){ // it's print all element in string 
     let map = new Map();
 
@@ -328,3 +328,108 @@ function compressedString(str){ // it's print all element in string
 }
 
     
+// let str="qwertyuiopasdfghjklzxcvbnm";
+// let str1="veamhjsgqocnrbfxdtwkylupzi";
+// let text="FpcpEbb2019";
+// convertKeyboardLayout(str,str1,text);
+
+function convertKeyboardLayout(str,str1,text){
+    let map = new Map();
+
+    for(let i=0;i<str.length;i++){
+        map.set(str[i],str1[i]);
+    }
+     for(let i=0;i<str.length;i++){
+        map.set(str[i].toUpperCase(),str1[i].toUpperCase());
+    }
+    let temp="";
+    for(let i=0;i<text.length;i++){
+        if(map.has(text[i])){
+            temp+=map.get(text[i]);
+        }else{
+            temp+=text[i];
+        }
+    }
+    console.log(temp);
+}
+
+
+// let str = "hey";
+// doubleParticularCh(str);
+
+function doubleParticularCh(str){
+    // let arr=str.trim().split('');
+    // console.log(arr);
+    let count=0;
+    let  temp="";
+    for(let i = 0 ; i < str.length;i++){
+        if(str[i] === 'e'){
+            count++;
+        }
+    }
+    temp+=str[0];
+    for(let i = 0;i < count*2;i++){
+        temp+='e';
+    }
+    temp+=str[str.length-1];
+    console.log(temp);
+}
+
+// let arr = ["glad", "monkey" ,"jass"];
+// getStrings(arr);
+
+function getStrings(arr){
+    let row1 = new Set("qwertyuiop");
+    let row2 = new Set("asdfghjkl");
+    let row3 = new Set("zxcvbnm");
+
+    for(let i=0;i<arr.length;i++){
+        let word=arr[i];
+
+        if(check(word , row1) || check(word , row2) || check(word , row3)){
+            console.log(word);
+        }
+    }
+}
+
+function check(word , wordSet){
+    for(let  i= 0;i<word.length;i++){
+        if(!wordSet.has(word[i])){
+            return false;
+        }
+    }
+    return true;
+}
+
+
+// let str="07:05:45PM";
+// timeConversion(str);
+
+function timeConversion(str) {
+  let hrs="";
+  let mins="";
+  let secs="";
+    for(let i = 0;i<2;i++){
+      hrs+=str[i];
+    }
+    for(let i = 3;i<5;i++){
+        mins+=str[i];
+    }
+    for(let i = 6;i<8;i++){
+        secs+=str[i];
+    }
+  if(str.includes("P")){
+      if(hrs !== "12"){
+          console.log(Number(hrs) + 12+":"+mins+":"+secs);
+      }else{
+          console.log(hrs+":"+mins+":"+secs);
+      }
+  }else{
+    if(hrs === "12"){
+         console.log("00"+":"+mins+":"+secs);
+    }else{
+         console.log(hrs+":"+mins+":"+secs);
+    }
+  } 
+  
+}

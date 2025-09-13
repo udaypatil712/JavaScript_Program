@@ -3,7 +3,7 @@ let target = 2;
 console.log(binarySearch(arr,target,0,arr.length-1));
 
 function binarySearch(arr,target , s ,e){
-    while(s > e){
+    if(s > e){
         return -1;
     } 
     let mid = Math.floor(s + (e -s ) / 2);
