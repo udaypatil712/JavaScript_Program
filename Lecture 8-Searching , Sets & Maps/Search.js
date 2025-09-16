@@ -165,4 +165,32 @@ function upperBound(arr){
 }
  
 
+// let arr=[6,7,8,9,1,2,3];
+// let target=1;
+// console.log(searchRotateArray(arr,target));
 
+function searchRotateArray(arr,target){
+    let s=0;
+    let e=arr.length-1;
+
+    while(s <= e){
+        let mid = Math.floor(s +( e - s)/2);
+        if(arr[mid] == target){
+            return mid;
+        }
+        if(arr[s] <= arr[mid]){
+            if(arr[s] <= target && arr[mid] >= target){
+                e = mid-1;
+            }else{
+                s = mid+1;
+            }
+        }else{
+            if(arr[mid] <= target && arr[e] >= target){
+                s = mid + 1;
+            }else{
+                e = mid - 1;
+            }
+        }
+    }
+    return -1;
+}

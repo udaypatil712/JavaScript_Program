@@ -104,24 +104,24 @@ function maxElement(arr , i,max){
 // let target = 2;
 // firstAndLastOccurence(arr,target);
 
-function firstAndLastOccurence(arr,target){
-    let first = -1;
-    let last = -1;
+function firstAndLastOccurence(arr,target){  o(n) , o(1)
+        let first = -1;
+        let last = -1;
 
-    for(let i=0;i<arr.length;i++){
-        if(target === arr[i]){
-            first=i;
-            break;
+        for(let i=0;i<arr.length;i++){
+            if(target === arr[i]){
+                first=i;
+                break;
+            }
         }
-    }
-    for(let j=arr.length-1;j >= 0;j--){
-        if(target === arr[j]){
-            last=j;
-            break;
+        for(let j=arr.length-1;j >= 0;j--){
+            if(target === arr[j]){
+                last=j;
+                break;
+            }
         }
-    }
 
-    console.log(first , last);
+        console.log(first , last);
 
 }
 

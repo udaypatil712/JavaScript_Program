@@ -100,8 +100,40 @@ function firstAndLastOccurence(arr,target){
 
     console.log(first , last);
 
+
 }
 
+
+// .....Advance Problem......
+
+// let str = ")(";
+// let ans=[];
+// let check=checkParenthesis(str , ans);
+// console.log(check);
+
+function checkParenthesis(str,ans){
+
+    for(let i=0 ; i < str.length ; i++){
+        if(str[i] === "("){
+            ans.push("(");
+        }
+        else if(ans.length >= 1){
+            if(str[i] === ")"){
+                ans.pop();
+            }
+        }
+        else{
+            if(str[i] === ")"){
+                ans.push(")");
+            }
+        }
+    }
+    if(ans.length === 0){
+        return "valid";
+    }else{
+        return "invalid";
+    }
+}
 
 
 
