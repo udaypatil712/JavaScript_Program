@@ -12,9 +12,7 @@ function search(arr,low,high){
     
     return mergeArrSort(leftarr,rightarr);
 }
-
-
-
+ 
 function mergeArrSort(leftarr,rightarr){
  
     let i=0;
