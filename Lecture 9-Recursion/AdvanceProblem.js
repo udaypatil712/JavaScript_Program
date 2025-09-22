@@ -48,22 +48,30 @@ function printValidBracket(str,ans,count,n,i){
 }
 
 
-// let str="abc";
-// console.log(str);
-// swapping(str);
+let str="abb";
+let ans=[];
+main(str,0,ans);
+console.log(ans.join(' '));
 
-function swapping(str){
-    let arr=str.trim().split('');
-    console.log(arr);
 
-    let s=0
-    let e=1;
-
-    while(s<e){
-
+function main(str,index,ans){
+     if(index === str.length-1){
+        ans.push(str);
+        return;
+     }
+    for(let i = index; i < str.length;i++){
+        let newstr=swapping(str,index,i);
+        main(newstr,index + 1,ans);
     }
-  
-      console.log(arr);
-    
 
 }
+
+function swapping(str , i , j){
+
+    let arr = str.trim().split("");
+    [arr[i] , arr[j]] = [arr[j] , arr[i]];
+    return arr.join('');6
+
+}
+
+
