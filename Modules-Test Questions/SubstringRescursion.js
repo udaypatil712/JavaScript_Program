@@ -1,7 +1,7 @@
 let str="banana";
 let substringArr=[];
-// printSubString(str,0,0);
-// console.log(substringArr);
+printSubString(str,0,0);
+console.log(substringArr);
 
 
 function printSubString(str,i,j){

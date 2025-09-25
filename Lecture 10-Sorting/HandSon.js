@@ -124,25 +124,6 @@ function newSorting(arr){
 }
 
 
-let arr=[20,10,30,40,50];
-let min=arr[0];
-for(let i =0 ;i<arr.length;i++){
-    for(let j = i+1; j <arr.length;j++){
-       if(arr[i] < arr[j]){
-        let diff=arr[j] - arr[i];
-        let  dmin=diff;
-         if(diff < dmin){
-            dmin=diff;
-             
-         }
-      
-       }
-     
-    }
-      
-}
-
-
 function insertionSort(arr){  // Worse Case O(n*n)
     for(let i=0 ; i<arr.length-1;i++){
         for(let j=0;j<i+1;j++){
@@ -157,3 +138,84 @@ function insertionSort(arr){  // Worse Case O(n*n)
     }
     console.log(arr);
 }
+
+
+
+/* sort() in-bulid for sorting method in JS */
+
+let arr = [3, 1, 6, 2, 8, 7, 4];
+arr.sort(); //sorts in ascending order
+arr.sort().reverse(); // sorts in descending order
+
+//also sorts in ascending order
+arr.sort((a, b) => a - b);
+console.log({ arr });
+
+//also sorts in descending order
+arr.sort((a, b) => b - a);
+console.log({ arr });
+
+// let arr1 = ["apple", "watermelon", "kiwi"];
+arr1.sort();
+console.log(arr);
+
+//H.W. explore localeCompare() method for strings comparison
+
+let students = [
+  { name: "Kiran", age: 20, rollNum: 10 },
+  {
+    name: "Ramesh",
+    age: 20,
+    rollNum: 7,
+  },
+  { name: "Suresh", age: 24, rollNum: 12 },
+];
+
+students.sort((a, b) => {
+  if (a.age == b.age) return b.rollNum - a.rollNum;
+  return a.age - b.age;
+});
+// console.log(students);
+
+const nestedArr1 = [
+  [1, 3],
+  [2, 1],
+  [1, 2],
+  [2, 4],
+];
+
+// nestedArr1.sort((a, b) => a[1] - b[1]);
+// console.log({ nestedArr1 });
+
+/* H.w: sort the above array according to first value and then according to second value 
+output should be: 
+[
+  [1, 2],
+  [1, 3],
+  [2, 1],
+  [2, 4],
+]
+*/
+
+let fruitsName = ["apple", "watermelon", "kiwi","banana","Mango"];
+fruitsName.sort().sort((a,b)=>a.localeCompare(b));
+console.log(fruitsName); // output:- [ 'apple', 'banana', 'kiwi', 'Mango', 'watermelon' ]
+
+
+const nestedArr = [
+  [1, 3],
+  [2, 1],
+  [1, 2],
+  [2, 4],
+];
+
+nestedArr.sort((a,b)=> 
+    {
+        if(a[0] === b[0]){
+        return a[1] - b[1];
+    }
+    return a[0]-b[0];
+}
+);
+
+console.log({nestedArr}); //{ nestedArr: [ [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 4 ] ] }

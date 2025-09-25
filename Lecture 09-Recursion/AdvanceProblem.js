@@ -22,25 +22,25 @@ function checkValidORNot(str,count){
     }
 }
 
-// let str="";
-// let ans=[];
-// let count=0;
-// let n=4;
-// printValidBracket(str,ans,count,n,0);
-// console.log(ans);
+let str="";
+let ans=[];
+let count=0;
+let n=4;
+printValidBracket(str,ans,count,n,0);
+console.log(ans);
 
 function printValidBracket(str,ans,count,n,i){
     if(count < 0){
-        // return;
+        return;
     }
     if(n === i){
         
 
-        // if(count === 0){
-        //     ans.push(str);
+        if(count === 0){
+            ans.push(str);
          
-        // }
-        //    return;
+        }
+           return;
     }
     printValidBracket(str+"(" , ans , count+1 , n , i+1);
     printValidBracket(str+")" , ans , count-1 , n , i+1);
@@ -48,10 +48,10 @@ function printValidBracket(str,ans,count,n,i){
 }
 
 
-let str="abb";
-let ans=[];
-main(str,0,ans);
-console.log(ans.join(' '));
+// let str="1234";
+// let ans=[];
+// main(str,0,ans);
+// console.log(ans.join(' '));
 
 
 function main(str,index,ans){
@@ -70,7 +70,7 @@ function swapping(str , i , j){
 
     let arr = str.trim().split("");
     [arr[i] , arr[j]] = [arr[j] , arr[i]];
-    return arr.join('');6
+    return arr.join('');
 
 }
 
