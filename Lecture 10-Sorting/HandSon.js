@@ -1,221 +1,218 @@
-// let arr=[-1,-5,-2,-9,5,6,4,23,2,2];
-// newSorting(arr);
+// // let arr=[-1,-5,-2,-9,5,6,4,23,2,2];
+// // newSorting(arr);
 
-function newSorting(arr){
-    let Narr=[];
+// function newSorting(arr){
+//     let Narr=[];
 
-    for(let i = 0 ; i < arr.length ; i++){
-        if(arr[i] < 0){
-            Narr.push(Math.abs(arr[i]));
-        }
-    }
-    // console.log(Narr);
+//     for(let i = 0 ; i < arr.length ; i++){
+//         if(arr[i] < 0){
+//             Narr.push(Math.abs(arr[i]));
+//         }
+//     }
+//     // console.log(Narr);
     
-    let Nmax=Narr[0];
+//     let Nmax=Narr[0];
 
-    for(let i =0 ;i < Narr.length ; i++){
-        if(Narr[i] > Nmax){
-            Nmax=Narr[i];
-        }
-    }
-    // console.log(Nmax);
+//     for(let i =0 ;i < Narr.length ; i++){
+//         if(Narr[i] > Nmax){
+//             Nmax=Narr[i];
+//         }
+//     }
+//     // console.log(Nmax);
 
-    let Ntemp= new Array(Nmax+1).fill(0);
+//     let Ntemp= new Array(Nmax+1).fill(0);
 
-    let Nmap = new Map();
+//     let Nmap = new Map();
 
-    for(let i = 0 ; i < Narr.length; i++){
-        if(Nmap.has(Narr[i])){
-            Nmap.set(Narr[i] ,Nmap.get(Narr[i]) + 1); 
-        }else{
-            Nmap.set(Narr[i] , 1); 
-        }
-    }
-    // console.log(Nmap);
+//     for(let i = 0 ; i < Narr.length; i++){
+//         if(Nmap.has(Narr[i])){
+//             Nmap.set(Narr[i] ,Nmap.get(Narr[i]) + 1); 
+//         }else{
+//             Nmap.set(Narr[i] , 1); 
+//         }
+//     }
+//     // console.log(Nmap);
     
-    for(let [key , value] of Nmap.entries()){
-        Ntemp[key]=Nmap.get(key);
-    }
-    // console.log(Ntemp);
+//     for(let [key , value] of Nmap.entries()){
+//         Ntemp[key]=Nmap.get(key);
+//     }
+//     // console.log(Ntemp);
 
-    let Nans = [];
-    let n =0
-    for(let i = 0 ; i < Ntemp.length ; i++){
-        if(Ntemp[i] != 0){
-            if(Ntemp[i] > 1){
-                Nans[n]=-(i);
-                n++;
-            }
-            Nans[n]=-(i);
-            n++;
-        }
+//     let Nans = [];
+//     let n =0
+//     for(let i = 0 ; i < Ntemp.length ; i++){
+//         if(Ntemp[i] != 0){
+//             if(Ntemp[i] > 1){
+//                 Nans[n]=-(i);
+//                 n++;
+//             }
+//             Nans[n]=-(i);
+//             n++;
+//         }
         
-    }
-    //  console.log(Nans);
+//     }
+//     //  console.log(Nans);
 
-     let Parr=[];
+//      let Parr=[];
 
-     for(let i  = 0 ;i < arr.length ; i++){
-        if(arr[i] >= 0){
-            Parr.push(arr[i]);
-        }
-     }
-    //  console.log(Parr);
+//      for(let i  = 0 ;i < arr.length ; i++){
+//         if(arr[i] >= 0){
+//             Parr.push(arr[i]);
+//         }
+//      }
+//     //  console.log(Parr);
 
-    let Pmax=Parr[0];
-    for(let i=0;i<Parr.length;i++){
-        if(Pmax < Parr[i]){
-            Pmax=Parr[i];
-        }
-    }
+//     let Pmax=Parr[0];
+//     for(let i=0;i<Parr.length;i++){
+//         if(Pmax < Parr[i]){
+//             Pmax=Parr[i];
+//         }
+//     }
  
-    let Ptemp= new Array(Pmax+1).fill(0);
+//     let Ptemp= new Array(Pmax+1).fill(0);
 
-    let Pmap = new Map();
-    for(let i = 0 ; i < Parr.length; i++){
-        if(Pmap.has(Parr[i])){
-            Pmap.set(Parr[i] ,Pmap.get(Parr[i]) + 1); 
-        }else{
-            Pmap.set(Parr[i] , 1); 
-        }
-    }
-    // console.log(Pmap);
+//     let Pmap = new Map();
+//     for(let i = 0 ; i < Parr.length; i++){
+//         if(Pmap.has(Parr[i])){
+//             Pmap.set(Parr[i] ,Pmap.get(Parr[i]) + 1); 
+//         }else{
+//             Pmap.set(Parr[i] , 1); 
+//         }
+//     }
+//     // console.log(Pmap);
     
-    for(let [key , value] of Pmap.entries()){
-        Ptemp[key]=Pmap.get(key);
-    }
-    // console.log(Ptemp);
+//     for(let [key , value] of Pmap.entries()){
+//         Ptemp[key]=Pmap.get(key);
+//     }
+//     // console.log(Ptemp);
 
-    let Pans = [];
-    let p =0;
-    for(let i = 0 ; i < Ptemp.length ; i++){
-        if(Ptemp[i] != 0){
-            if(Ptemp[i] > 1){
-                Pans[p]=i;
-                p++;
-            }
-            Pans[p]=i;
-            p++;
-        }
+//     let Pans = [];
+//     let p =0;
+//     for(let i = 0 ; i < Ptemp.length ; i++){
+//         if(Ptemp[i] != 0){
+//             if(Ptemp[i] > 1){
+//                 Pans[p]=i;
+//                 p++;
+//             }
+//             Pans[p]=i;
+//             p++;
+//         }
         
-    }
-    //  console.log(Pans);
+//     }
+//     //  console.log(Pans);
 
 
-    let result=[];
+//     let result=[];
      
-     let k=0;
-     for(let i = Nans.length-1 ; i>=0 ; i--){
-        result[k] = Nans[i];
-        k++;
-     }
+//      let k=0;
+//      for(let i = Nans.length-1 ; i>=0 ; i--){
+//         result[k] = Nans[i];
+//         k++;
+//      }
 
-    //  console.log(k);
+//     //  console.log(k);
 
-     for(let i =  0; i < Pans.length ; i++){
-        result[k] = Pans[i];
-        k++;
-     }
+//      for(let i =  0; i < Pans.length ; i++){
+//         result[k] = Pans[i];
+//         k++;
+//      }
 
 
-     console.log(result);
+//      console.log(result);
 
  
-}
+// }
 
 
-function insertionSort(arr){  // Worse Case O(n*n)
-    for(let i=0 ; i<arr.length-1;i++){
-        for(let j=0;j<i+1;j++){
-            if(arr[j] > arr[j+1]){
-                let temp = arr[j];
-                arr[j] = arr[j+1];
-                arr[j+1] = temp;
-            }
-            console.log(arr);
-        }
-        console.log(".......")
-    }
-    console.log(arr);
-}
+// function insertionSort(arr){  // Worse Case O(n*n)
+//     for(let i=0 ; i<arr.length-1;i++){
+//         for(let j=0;j<i+1;j++){
+//             if(arr[j] > arr[j+1]){
+//                 let temp = arr[j];
+//                 arr[j] = arr[j+1];
+//                 arr[j+1] = temp;
+//             }
+//             console.log(arr);
+//         }
+//         console.log(".......")
+//     }
+//     console.log(arr);
+// }
 
 
 
-/* sort() in-bulid for sorting method in JS */
+// /* sort() in-bulid for sorting method in JS */
 
-let arr = [3, 1, 6, 2, 8, 7, 4];
-arr.sort(); //sorts in ascending order
-arr.sort().reverse(); // sorts in descending order
+// let arr = [3, 1, 6, 2, 8, 7, 4];
+// arr.sort(); //sorts in ascending order
+// arr.sort().reverse(); // sorts in descending order
 
-//also sorts in ascending order
-arr.sort((a, b) => a - b);
-console.log({ arr });
+// //also sorts in ascending order
+// arr.sort((a, b) => a - b);
+// console.log({ arr });
 
-//also sorts in descending order
-arr.sort((a, b) => b - a);
-console.log({ arr });
+// //also sorts in descending order
+// arr.sort((a, b) => b - a);
+// console.log({ arr });
 
-// let arr1 = ["apple", "watermelon", "kiwi"];
-arr1.sort();
-console.log(arr);
+// // let arr1 = ["apple", "watermelon", "kiwi"];
+// arr1.sort();
+// console.log(arr);
 
-//H.W. explore localeCompare() method for strings comparison
+// //H.W. explore localeCompare() method for strings comparison
 
-let students = [
-  { name: "Kiran", age: 20, rollNum: 10 },
-  {
-    name: "Ramesh",
-    age: 20,
-    rollNum: 7,
-  },
-  { name: "Suresh", age: 24, rollNum: 12 },
-];
+// let students = [
+//   { name: "Kiran", age: 20, rollNum: 10 },
+//   {
+//     name: "Ramesh",
+//     age: 20,
+//     rollNum: 7,
+//   },
+//   { name: "Suresh", age: 24, rollNum: 12 },
+// ];
 
-students.sort((a, b) => {
-  if (a.age == b.age) return b.rollNum - a.rollNum;
-  return a.age - b.age;
-});
-// console.log(students);
+// students.sort((a, b) => {
+//   if (a.age == b.age) return b.rollNum - a.rollNum;
+//   return a.age - b.age;
+// });
+// // console.log(students);
 
-const nestedArr1 = [
-  [1, 3],
-  [2, 1],
-  [1, 2],
-  [2, 4],
-];
+// const nestedArr1 = [
+//   [1, 3],
+//   [2, 1],
+//   [1, 2],
+//   [2, 4],
+// ];
 
-// nestedArr1.sort((a, b) => a[1] - b[1]);
-// console.log({ nestedArr1 });
+// // nestedArr1.sort((a, b) => a[1] - b[1]);
+// // console.log({ nestedArr1 });
 
-/* H.w: sort the above array according to first value and then according to second value 
-output should be: 
-[
-  [1, 2],
-  [1, 3],
-  [2, 1],
-  [2, 4],
-]
-*/
+// /* H.w: sort the above array according to first value and then according to second value 
+// output should be: 
+// [
+//   [1, 2],
+//   [1, 3],
+//   [2, 1],
+//   [2, 4],
+// ]
+// */
 
-let fruitsName = ["apple", "watermelon", "kiwi","banana","Mango"];
-fruitsName.sort().sort((a,b)=>a.localeCompare(b));
-console.log(fruitsName); // output:- [ 'apple', 'banana', 'kiwi', 'Mango', 'watermelon' ]
+// let fruitsName = ["apple", "watermelon", "kiwi","banana","Mango"];
+// fruitsName.sort().sort((a,b)=>a.localeCompare(b));
+// console.log(fruitsName); // output:- [ 'apple', 'banana', 'kiwi', 'Mango', 'watermelon' ]
 
 
 const nestedArr = [
   [1, 3],
-  [2, 1],
+  [3, 1],
   [1, 2],
   [2, 4],
 ];
-
-nestedArr.sort((a,b)=> 
-    {
-        if(a[0] === b[0]){
-        return a[1] - b[1];
+let arr=[];
+nestedArr.sort((a,b)=> {
+    for(let i=0; i<2 ;i++){
+        a[i]-b[i];
     }
-    return a[0]-b[0];
-}
-);
+});
 
-console.log({nestedArr}); //{ nestedArr: [ [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 4 ] ] }
+console.log(arr); //{ nestedArr: [ [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 4 ] ] }

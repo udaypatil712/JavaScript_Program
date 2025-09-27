@@ -22,7 +22,13 @@ const team = {
 
   addScore: function (id, score) {
     /* find the player with this id, and push this score to its score array */
-    this.players.push({id : id , scores : score});
+    let temp=0;
+    for(let i=0 ; i < this.players.length;i++){
+        if(id === this.players[i].id){
+            temp = i;
+        }
+    }
+    this.players[temp].scores.push(score);
   },
 
   averageScore: function (id,aveScore) {
@@ -66,10 +72,11 @@ const team = {
 
 // team.display();
 
+
 // team.addPlayers(3);
 // team.display();
 
-// team.addScore(3,[122,23,34]);
+// team.addScore(2,123);
 // team.display();
 
 // console.log(team.averageScore(1,0));

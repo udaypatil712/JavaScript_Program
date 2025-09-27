@@ -1,47 +1,52 @@
-// let str="()())(";
-//  let count=0;
-// console.log(checkValidORNot(str,count));
+let str=")()())((()";
+ let count=0;
+ let ansc=0;
+console.log(checkValidORNot(str,count,ansc));
 
-function checkValidORNot(str,count){
-
+function checkValidORNot(str,count,ansc){
+    
     for(let i=0;i<str.length;i++){
     if(str[i] === "("){
         count++;
+         
     }else{
+        if(str[i] === ")" && count == 0){
+            continue;
+        }
         if(count > 0){
             count--;
+            ansc+=2;
         }else{
-             return false;
+             return ansc;
         }
     }
 }
     if(count !== 0){
-        return false;
+        return ansc;
     }else{
-        return true;
+        return ansc;
     }
 }
 
-let str="";
-let ans=[];
-let count=0;
-let n=4;
-printValidBracket(str,ans,count,n,0);
-console.log(ans);
+// let str="";
+// let ans=0;
+// let count=0;
+// let n=4;
+// printValidBracket(str,ans,count,n,0);
+// console.log(ans);
 
 function printValidBracket(str,ans,count,n,i){
     if(count < 0){
         return;
     }
-    if(n === i){
+    // if(n === i){
         
 
         if(count === 0){
-            ans.push(str);
-         
+            ans+=1;
+    // }
         }
-           return;
-    }
+          
     printValidBracket(str+"(" , ans , count+1 , n , i+1);
     printValidBracket(str+")" , ans , count-1 , n , i+1);
 

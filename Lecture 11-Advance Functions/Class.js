@@ -10,9 +10,16 @@ let print2= (n)=> {
 };
 // console.log(print(3));
 
-// .......higher order functions.......
+// .......higher order functions.......(doesn't change the original array)
    
-    // 1 .forEach()
+    // 1 .forEach()  => doesn't change the original array
+
+    // - applies the callback function on each element
+    // - iterates over each element and doesn't break like other for loops
+    // - doesn't change the original array
+    // - returns undefined
+    // - can be used to iterate and do some operations on array
+
 
 // let arr=[2,1,3,4];
 
@@ -28,6 +35,11 @@ let print2= (n)=> {
 
     //2 .map();
 
+    //  - transforms the array
+    // - returns an array
+    // - doesn't change the original array
+
+
 //  let user=[
 //     {name : "uday" , age:22},
 //     {name : "pratik" , age:22}
@@ -42,6 +54,12 @@ let print2= (n)=> {
 
 
     //3 .filter();
+
+    // - keeps the elements that passes the condition
+    // - returns an array
+    // - doesn't change the original array
+    // - nums.filter((value, index, array) => condition)
+
 
 //  let names = ["uday" , "pratik"];
  
