@@ -202,17 +202,92 @@
 // console.log(fruitsName); // output:- [ 'apple', 'banana', 'kiwi', 'Mango', 'watermelon' ]
 
 
-const nestedArr = [
-  [1, 3],
-  [3, 1],
-  [1, 2],
-  [2, 4],
-];
-let arr=[];
-nestedArr.sort((a,b)=> {
-    for(let i=0; i<2 ;i++){
-        a[i]-b[i];
-    }
-});
+// const nestedArr = [
+//   [1, 3],
+//   [3, 1],
+//   [1, 2],
+//   [2, 4],
+// ];
+// let arr=[];
+// nestedArr.sort((a,b)=> {
+//     for(let i=0; i<2 ;i++){
+//         a[i]-b[i];
+//     }
+// });
 
-console.log(arr); //{ nestedArr: [ [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 4 ] ] }
+// console.log(arr); //{ nestedArr: [ [ 1, 2 ], [ 1, 3 ], [ 2, 1 ], [ 2, 4 ] ] }
+
+// let str=[1,2,3,4];
+// let ans=[];
+// let i =0;
+// let arr=[];
+// sorting(str,ans,i,arr);
+// console.log(arr);
+// let sum =0;
+//   for(let i =0 ; i < arr.length;i++){
+//     sum+=arr[i];
+//   }
+//   console.log(sum);
+ 
+ 
+ 
+
+ 
+// function sorting(str,ans,i,arr){
+//   let count =0;
+//   if(3 === ans.length){
+//     if(1 === ans.length || 3 === ans.length){
+//       let min=ans[0];
+//       let max = ans[2];
+//       let temp = max - min;
+   
+//       if(temp <= 2){
+//         count++;
+//       }
+      
+//     }
+//     arr.push(count);
+//     return;
+//   }
+//   if(str.length === i){
+//     return;
+//   }
+
+//   ans.push(str[i]);
+//   sorting(str,ans,i+1,arr);
+//   ans.pop();
+//   sorting(str,ans,i+1,arr);
+//}
+
+
+ // second mininmum..;
+
+ let arr = [4 ,3, 2, 1];
+
+let min=Infinity;
+let smin=Infinity;
+let max=-Infinity;
+let smax=-Infinity;
+let ans=0;
+
+
+ for(let i =0;i<arr.length;i++){
+    if(arr[i] < min){
+      smin=min;
+      min = arr[i];
+    }else if(arr[i] > min && smin > arr[i]){
+      smin=arr[i];
+      
+    }
+ }
+ 
+  for(let i =0;i<arr.length;i++){
+    if(arr[i] > max){
+      smax=max;
+      max = arr[i];
+    }else if(arr[i] < max && arr[i]> smax){
+      smax=arr[i];
+    }
+ }
+ans = (max*smax) - ( min*smin );
+ console.log(ans);
