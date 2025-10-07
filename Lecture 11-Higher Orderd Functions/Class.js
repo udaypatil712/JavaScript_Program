@@ -134,14 +134,14 @@ let print2= (n)=> {
 
 //ques 1
 
-let users=[
-    {name : "uday" ,age : 22},
-    {name : "ethan" ,age : 42},
-    {name : "sdv" ,age : 462}
-];
+// let users=[
+//     {name : "uday" ,age : 22},
+//     {name : "ethan" ,age : 42},
+//     {name : "sdv" ,age : 462}
+// ];
 
-let printName=users.find((value , ind , arr)=> value.age > 30);  // you want to return only value that time use the find()0
-console.log(printName.name);  
+// let printName=users.find((value , ind , arr)=> value.age > 30);  // you want to return only value that time use the find()0
+// console.log(printName.name);  
 
 
 //ques 2
@@ -149,6 +149,7 @@ console.log(printName.name);
 // let users=[
 //     {name : "uday" ,age : 22},
 //     {name : "ethan" ,age : 42},
+//      {name : "ethanss" ,age : 422},
 // ];
 
 // let ans = users.filter((value,ind,arr)=>{
@@ -186,20 +187,20 @@ console.log(printName.name);
 
 //ques 5
 
-// let users=[
-//     {name : "uday" ,age : 22,isActive:true},
-//     {name : "ethan" ,age : 42,isActive:false},
-//     {name : "ethan" ,age : 12,isActive:false}
-// ];
+let users=[
+    {name : "uday" ,age : 22,isActive:true},
+    {name : "ethan" ,age : 42,isActive:false},
+    {name : "ethan" ,age : 12,isActive:false}
+];
 
-// let sumAge=users.reduce((sum , val , ind , arr)=>{
-//     if(val.age < 30){
-//         sum+=val.age;
-//     }
-//     return sum;
-// },0);
+let sumAge=users.reduce((sum , val , ind , arr)=>{
+    if(val.age < 30){
+        sum+=val.age;
+    }
+    return sum;
+},0);
 
-// console.log({sumAge});
+console.log({sumAge});
 
 
 // ques 6
